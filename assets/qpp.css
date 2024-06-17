@@ -1,0 +1,948 @@
+* {
+	font-family: Helvetica, sans-serif;
+	/* font-size: calc(12px + (7 - 1) * ((100vw - 300px) / (1600 - 300))); */
+	font-size: 20px;
+	color: rgb(208, 208, 208);
+	font-weight: 500;
+	text-decoration: none;
+	list-style: none;
+	border: 0;
+	outline: 0;
+}
+
+a {
+	color: rgb(88, 161, 113);
+	font-weight: 300;
+}
+
+a:hover {
+	transition: 0.1s;
+	color: rgb(144, 212, 169);
+	text-decoration: underline;
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+p {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+}
+h1 {
+	font-size: 2rem;
+}
+h2 {
+	height: auto;
+	width: 100%;
+	margin-top: 0;
+	font-size: 1.75rem;
+	color: rgb(119, 178, 129);
+	padding: 0 0;
+}
+h3 {
+	font-size: 1.5rem;
+	margin: 0;
+	margin-top: 1rem;
+	margin-bottom: 0.2rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+h5 {
+	font-size: 1.125rem;
+}
+
+.text_p {
+	margin-top: 20px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin-top: 108px;
+	background-color: rgb(40, 42, 44);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	margin: 1.5rem;
+	padding: 1.1rem;
+	width: 100%;
+	border-radius: 0.5rem;
+	font-size: 1.1rem;
+	color: rgb(213, 213, 213);
+	background-color: rgb(83, 142, 101);
+	cursor: pointer;
+	transition: 0.15s;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+button:hover {
+	transition: 0.15s;
+	background-color: rgb(99, 165, 120);
+}
+
+button:active {
+	background-color: rgb(40, 89, 55);
+}
+
+button:disabled {
+	background-color: rgb(85, 85, 85);
+	cursor: default;
+}
+
+label {
+	position: relative;
+	font-size: 1rem;
+	margin: 8px 0;
+	width: 100%;
+	height: auto;
+	color: rgb(238, 238, 238);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: left;
+}
+
+.filter__label:hover {
+	color: #bebebe;
+}
+
+option {
+	color: rgb(66, 66, 66);
+}
+
+input,
+select {
+	width: 96%;
+	margin: 10px 0;
+	padding: 10px;
+	background-color: transparent;
+	border-radius: 0.5rem;
+	border: 1.5px solid rgb(118, 118, 118);
+	outline: none;
+	line-height: 2rem;
+}
+
+input:focus,
+select:focus {
+	border-color: rgb(183, 183, 183);
+	box-shadow: rgba(212, 212, 212, 0.508) 0px 0px 6px;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+/* Ручка скролбару */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 0.5rem;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(69, 70, 74);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(99, 100, 104);
+}
+/*  Ручка скролбару */
+
+/* ----------------------------- Кнопка вибору файлів ----------------------------- */
+::-webkit-file-upload-button {
+	color: #dbdbdb;
+	background-color: rgb(91, 141, 105);
+	border-radius: 0.3rem;
+	border: none;
+	padding: 8px 24px;
+}
+
+::-webkit-file-upload-button:hover {
+	background-color: rgb(107, 164, 123);
+}
+/* ----------------------------- Кнопка вибору файлів ----------------------------- */
+
+/* ----------------------------- Чекбокс ----------------------------- */
+input[type='checkbox'] {
+	appearance: none;
+	-webkit-appearance: none;
+	height: 0.8em;
+	width: 0.8em;
+	background-color: rgba(61, 61, 63, 0.85);
+	border-radius: 0.2em;
+	cursor: pointer;
+	display: flex;
+	outline: none;
+	align-items: center;
+	justify-content: center;
+	margin-right: 0.3em;
+}
+
+input[type='checkbox']:hover {
+	background-color: #a5a5a5;
+}
+
+input[type='checkbox']:checked {
+	background-color: rgb(102, 162, 119);
+}
+
+input[type='checkbox']:checked:hover {
+	background-color: rgb(123, 187, 141);
+}
+
+input[type='checkbox']::after {
+	content: '\e900';
+	font-family: 'icomoon';
+	font-weight: 900;
+	padding-top: 0.2em;
+	font-size: 0.45em;
+	color: #ffffff;
+	display: none;
+}
+
+input[type='checkbox']:checked::after {
+	display: block;
+}
+
+.wrapper {
+	height: 1.7em;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.wrapper input[type='checkbox'] {
+	font-size: 1.4rem;
+}
+
+.wrapper label {
+	cursor: pointer;
+}
+/* ----------------------------- Чекбокс ----------------------------- */
+
+/* -------------------------  header  ------------------------- */
+.header__blur {
+	background-color: blue;
+}
+
+header.header {
+	font-family: Helvetica, sans-serif;
+	font-weight: 100;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: rgba(52, 53, 54, 0.8);
+	backdrop-filter: blur(10px);
+	width: 100%;
+	z-index: 9999;
+	transition: background-color 0.3s;
+	transition: box-shadow 0.3s;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	transition: padding-top 0.3s, padding-bottom 0.3s, border-radius 0.3s;
+}
+
+header.header.header_mini {
+	box-shadow: 0px 4px 25px -9px rgba(0, 0, 0, 0.8);
+	width: 99.4%;
+	border-radius: 0.6rem;
+	margin: 0.3rem;
+}
+
+.header_mini .header__container {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+header div nav ul {
+	display: flex;
+	margin: 5px 0;
+}
+
+header div nav ul li {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__label {
+	font-size: 1.5rem;
+	transition: font-size 0.2s;
+}
+
+.header_mini .header__label {
+	font-size: 1rem;
+}
+
+.logo {
+	color: rgb(193, 123, 91);
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	transition: font-size 0.2s;
+}
+
+.header_mini .logo {
+	font-size: 1rem;
+}
+
+.avatar {
+	width: 3rem;
+	height: 3rem;
+	display: block;
+	object-fit: cover;
+	border-radius: 50%;
+	padding: 2px 2px;
+	margin-right: 2rem;
+	margin-left: 1rem;
+	border: solid 3px rgb(97, 97, 97);
+	transition: width 0.2s, height 0.2s;
+	filter: blur(0.6px);
+}
+
+.header_mini .avatar {
+	width: 1.8rem;
+	height: 1.8rem;
+}
+
+/* -------------------------  header  ------------------------- */
+
+.notice {
+	padding: 10px;
+	border-radius: 6px;
+	margin: 20px 0;
+}
+
+.notice.error {
+	position: absolute;
+	width: 50%;
+	padding: 1rem 0;
+	border-radius: 0.5rem;
+	border: 2px solid #762c2c;
+	background: #c5a9a9;
+	color: #762c2c;
+	text-align: center;
+}
+
+.notice.success {
+	width: 50%;
+	padding: 1rem 0;
+	border-radius: 0.5rem;
+	border: 2px solid #2c742b;
+	background: #e1fee3;
+	color: #2c742b;
+}
+
+.error-message {
+	width: 300%;
+	padding: 0.2rem 1rem;
+	border-radius: 0.35rem;
+	border: 2px solid #762c2c;
+	background: #c5a9a9;
+	color: #762c2c;
+	text-align: center;
+}
+
+.card {
+	position: relative;
+	min-width: 450px;
+	width: 40%;
+	background-color: rgb(66, 67, 69);
+	border-radius: 1rem;
+	max-width: 1200px;
+
+	padding: 2.5rem 2.5rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.grid {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.grid__pass {
+	width: 47%;
+}
+
+/* ---------------------- Модальне вікно ---------------------- */
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99998;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.35s, visibility 0.35s;
+	backdrop-filter: blur(6px);
+}
+
+.modal__box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
+	border-radius: 1rem;
+	min-width: 30rem;
+	min-height: 30rem;
+	max-width: 1500px;
+	padding: 35px;
+	z-index: 1;
+	margin: 30px 15px;
+	background-color: rgb(71, 72, 74);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	transition: 0.3s;
+	margin-top: 250px;
+}
+
+.modal_list {
+	max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modal__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.modal__text-form {
+	width: 12%;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.modal__text-form:not(:first-child) {
+	padding-left: 30px;
+}
+
+.modal__form {
+	width: 90%;
+}
+
+.modal.open {
+	visibility: visible;
+	opacity: 1;
+}
+
+.modal.open .modal__box {
+	margin-top: 0px;
+}
+
+.modal__close {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 10px;
+	height: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-footer {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+}
+/* ---------------------- Модальне вікно ---------------------- */
+
+/* ---------------------- Кабінет користувача ---------------------- */
+.user_link {
+	cursor: pointer;
+}
+
+.user_link:hover {
+	text-decoration: none;
+}
+/* ---------------------- Кабінет користувача ---------------------- */
+
+/* ---------------------- Картка авто ---------------------- */
+.car {
+	position: relative;
+	margin: 15px 15px;
+	padding: 10px 10px;
+	background-color: rgb(60, 62, 64);
+	box-shadow: 0px 4px 25px -9px rgba(0, 0, 0, 0.6);
+	border-radius: 1rem;
+	min-width: 1200px;
+	width: 60%;
+	height: 21rem;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.car__link:hover {
+	text-decoration: none;
+}
+
+.car_plus {
+	width: 87%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 0;
+	border: 10px dashed rgb(118, 118, 118);
+}
+
+.car_plus svg {
+	height: 30%;
+	width: 30%;
+	position: relative;
+	display: flex;
+	transition: 0.2s;
+}
+
+.car_plus:hover {
+	padding: 0px 0;
+	border: 10px dashed rgb(94, 66, 92);
+	background-color: rgb(123, 95, 126);
+}
+
+.car_plus:hover svg {
+	height: 50%;
+	width: 50%;
+	transition: 0.2s;
+}
+
+.car_plus svg g g {
+	fill: rgb(107, 107, 107);
+}
+
+.car_plus:hover svg g g {
+	fill: rgb(94, 66, 92);
+}
+
+.car__container-img {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	border-radius: 0.7rem;
+	width: 43%;
+	height: 21rem;
+	object-fit: cover;
+}
+
+.car__img {
+	display: block;
+	width: 100%;
+	height: 21rem;
+	object-fit: cover;
+	transition: transform 0.2s;
+}
+
+.car__img_rented {
+	display: block;
+	width: 100%;
+	height: 21rem;
+	object-fit: cover;
+	transition: filter 0.2s;
+}
+
+.car:hover .car__img_rented {
+	filter: brightness(0.5);
+	filter: blur(6px);
+}
+
+.car:hover .car__img {
+	transform: scale(1.08);
+}
+
+.car__comp {
+	font-size: 1.15rem;
+}
+
+.ico {
+	font-size: 1.4em;
+	margin-right: 0.25em;
+	color: rgb(190, 56, 202);
+}
+
+.car__block {
+	height: 100%;
+	width: 52%;
+	margin-right: 3%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.car__name-car {
+	font-weight: 700;
+	font-size: 2rem;
+	margin-top: 0.5rem;
+	color: rgb(198, 198, 198);
+}
+
+.car__text {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.car__name-year {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	background-color: rgb(41, 42, 46);
+	padding: 0.2rem 0.8rem;
+	margin-left: 9%;
+	margin-right: 11%;
+	border-radius: 0.7rem;
+	box-shadow: 0px 4px 18px -9px rgba(0, 0, 0, 0.6);
+}
+
+.car__specs {
+	position: relative;
+	width: 100%;
+	line-height: 3.5rem;
+	margin-left: 3.3rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.car__price {
+	font-weight: 500;
+	font-size: 1.5rem;
+	color: rgb(206, 206, 206);
+	background-color: rgb(76, 119, 87);
+	margin: 1rem 0;
+	padding: 7px 2rem;
+	border-radius: 11px;
+}
+
+.car__class-price {
+	margin-left: 9%;
+	width: 85%;
+	height: 2.6rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* background-color: rgb(47, 46, 48); */
+	border-radius: 11px;
+	padding-bottom: 2%;
+}
+
+.car__class {
+	max-width: 200px;
+	font-weight: 500;
+	font-size: 1.5rem;
+	margin-right: 5%;
+	color: rgb(216, 207, 207);
+	/* background-color: rgb(47, 48, 53); */
+	margin: 1rem 0;
+	padding: 0.3rem 2rem;
+	border-radius: 11px;
+}
+/* ---------------------- Картка авто ---------------------- */
+
+/* ---------------------- Кабінет авто ---------------------- */
+.list__spis {
+	width: 95%;
+	margin-right: 0.4%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.list__block {
+	font-size: calc(5px + (15) * ((120vw - 490px) / 1700));
+	width: 100%;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+	/* background-color: rgb(0, 0, 0); */
+}
+
+.list__block .list__specs p {
+	font-size: 1em;
+}
+
+.list__button {
+	font-size: 1.2em;
+	display: flex;
+	justify-content: center;
+	border-radius: 0.7em;
+	background-color: rgb(60, 62, 64);
+	color: white;
+	padding: 0.9em;
+	transition: background-color 0.25s;
+}
+
+.list__button:hover {
+	color: white;
+}
+
+.list__button:hover {
+	text-decoration: none;
+}
+
+#list__button-home {
+	width: 35%;
+	margin-right: 1.5%;
+}
+
+#list__button-home:hover {
+	background-color: rgb(78, 81, 82);
+	transition: background-color 0.2s;
+}
+
+#list__button-stan {
+	width: 62.8%;
+}
+
+.list__specs {
+	font-size: 1em;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: calc(0px + (545) * ((120vw - 490px) / 1700));
+	width: 35%;
+	margin-left: 1.5%;
+	background-color: rgb(60, 62, 64);
+	padding: 1.3em;
+	border-radius: 0.7em;
+}
+
+.list__img {
+	display: block;
+	border: 1px solid rgba(60, 62, 64, 0.3);
+	border-radius: 0.7rem;
+	width: 65%;
+	height: calc(13px + (580) * ((120vw - 490px) / 1700));
+	/* height: 35rem; */
+	object-fit: cover;
+	box-shadow: 0px 4px 25px -9px rgba(0, 0, 0, 0.7);
+}
+
+.list__form {
+	font-size: 1em;
+	height: auto;
+	width: 65%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.list__label-date {
+	font-size: 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: rgb(60, 62, 64);
+	width: 100%;
+	border-radius: 0.7em;
+	padding: 0.5em;
+	padding-left: 1.5em;
+}
+
+.list__label-date:not(:last-of-type) {
+	margin-right: 2.3%;
+}
+
+.list__label-date label {
+	font-size: 1em;
+}
+
+input[type='date'] {
+	margin: 0;
+	border-radius: 0.55em;
+	height: 1.4em;
+	border: solid 1px rgb(103, 106, 109);
+	transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.list__label-date:hover input[type='date'] {
+	background-color: rgb(72, 73, 75);
+	box-shadow: rgba(212, 212, 212, 0.508) 0px 0px 6px;
+}
+
+::-webkit-calendar-picker-indicator {
+	background-color: rgb(226, 226, 226);
+	border-radius: 4px;
+}
+
+.list__specs_button_under {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 0.7em;
+	transition: background-color 0.2s;
+}
+
+.list__specs_button_under:hover {
+	background-color: rgb(78, 81, 82);
+}
+
+#date-submit {
+	font-size: 1em;
+	height: 0px;
+	width: 0px;
+	display: none;
+}
+
+#list__stop-rent {
+	margin: 0;
+	background-color: rgb(164, 99, 38);
+}
+
+.list__description {
+	font-size: 1.2em;
+	background-color: rgb(60, 62, 64);
+	padding: 1.5em;
+	border-radius: 0.7em;
+	width: 100%;
+	min-height: 50em;
+}
+
+.list__text {
+	background-color: firebrick;
+}
+
+.list__stan-orend {
+	background-color: rgb(191, 182, 80);
+}
+
+.list__stan-ne-orend {
+	width: 100%;
+	background-color: rgb(48, 155, 75);
+}
+
+.list__stan-ne-orend:hover {
+	background-color: rgb(88, 165, 87);
+}
+
+.list__stan-remont {
+	background-color: rgb(195, 55, 55);
+}
+/* ---------------------- Кабінет авто ---------------------- */
+
+/* ---------------------- Задній фон сортування та списку авто ---------------------- */
+.background__sort-car {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+}
+/* ---------------------- Задній фон сортування та списку авто ---------------------- */
+
+/* ---------------------- Сортування авто ---------------------- */
+.sort {
+	width: 100%;
+}
+
+.sort-filter__block {
+	width: 21%;
+}
+
+.sort-filter {
+	position: relative;
+	margin: 15px 15px;
+	padding: 15px 15px;
+	background-color: rgb(60, 61, 62);
+	box-shadow: 0px 4px 25px -9px rgba(0, 0, 0, 0.6);
+	border-radius: 1rem;
+	display: block;
+	align-items: center;
+	flex-direction: row;
+	justify-content: start;
+}
+
+.filter {
+	position: relative;
+	width: 100%;
+	padding: 10px 10px;
+}
+
+.filter__submit {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+/* ---------------------- Сортування авто ---------------------- */
+
+@font-face {
+	font-family: 'Helvetica';
+	src: url('/fonts/Helvetica.woff2') format('woff2');
+	font-weight: 400;
+	line-height: 1.5;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src: url('../src/fonts/Icomoon/icomoon.eot');
+	src: url('../src/fonts/Icomoon/icomoon.eot?#iefix')
+			format('embedded-opentype'),
+		url('../src/fonts/Icomoon/icomoon.woff') format('woff'),
+		url('../src/fonts/Icomoon/icomoon.ttf') format('truetype'),
+		url('../src/fonts/Icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
